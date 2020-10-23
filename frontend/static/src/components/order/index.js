@@ -22,9 +22,10 @@ class Order extends Component {
     return(
       <div className="col-4 cart">
         <h3>My Order</h3>
-        <h5>Subtotal</h5>
+        <h5>Subtotal ${this.props.subtotal}</h5>
         {orderList}
       </div>
+
     )
   }
 }

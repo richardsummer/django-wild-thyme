@@ -15,6 +15,7 @@ class Menu extends Component {
               <div className="card-body">
                 <h5 className="card-title">{item.name}</h5>
                 <p className="card-text">{item.info}</p>
+                <p className="card-price">{item.price}</p>
                 <button href="#" className="btn btn-primary" onClick={() => this.props.addToCart(item)}>Add to Order</button>
               </div>
             </div>
