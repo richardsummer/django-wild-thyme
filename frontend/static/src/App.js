@@ -35,30 +35,34 @@ class App extends Component {
     // create static menu array here
     // e.g. const menu = [food item objects go here]
     // this.setState({menu});
-    let item1 = {
-      name: 'Filet Mignon',
-      info: 'The finest cut of beef you can find.',
-      price: 40.00,
-    }
-    let item2 = {
-      name: 'Cedar Plank Salmon',
-      info: 'Fresh Atlantic salmon, topped with a lemon glaze.',
-      price: 33.00,
-    }
-    let item3 = {
-      name: 'Lamb Chops',
-      info: 'Marinated chops with fresh mint.',
-      price: 30.00,
-    }
-    let item4 = {
-      name: 'Lobster Tail',
-      info: 'Just caught rock lobster in sizzling butter.',
-      price: 38.00,
-    }
+    // let item1 = {
+    //   name: 'Filet Mignon',
+    //   info: 'The finest cut of beef you can find.',
+    //   price: 40,
+    // }
+    // let item2 = {
+    //   name: 'Cedar Plank Salmon',
+    //   info: 'Fresh Atlantic salmon, topped with a lemon glaze.',
+    //   price: 33,
+    // }
+    // let item3 = {
+    //   name: 'Lamb Chops',
+    //   info: 'Marinated chops with fresh mint.',
+    //   price: 30,
+    // }
+    // let item4 = {
+    //   name: 'Lobster Tail',
+    //   info: 'Just caught rock lobster in sizzling butter.',
+    //   price: 38,
+    // }
 
-    const menu = [item1, item2, item3, item4];
+    // const menu = [item1, item2, item3, item4];
+    //
+    // this.setState({menu});
 
-    this.setState({menu});
+    fetch('/api/v1/menu/')
+      .then(response => response.json())
+      .then(data => this.setState({menu: data}));
   }
 
   render(){

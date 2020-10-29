@@ -10,10 +10,10 @@ class Order extends Component {
 
   render() {
     // iterate over the order passed down through props and return an order item for each object in the array
-    let orderList= this.props.order.map((item, index) => {
-      return <div key={index}>
+    let orderList= this.props.order.map((item) => {
+      return <div key={item.id}>
               {item.name}
-              {item.price}
+              {(item.price / 100).toFixed(2)}
               <button type="button" onClick={() => this.props.removeFromCart(item)}>Remove</button>
             </div>
     }
@@ -22,7 +22,7 @@ class Order extends Component {
     return(
       <div className="col-4 cart">
         <h3>My Order</h3>
-        <h5>Subtotal ${this.props.subtotal}</h5>
+        <h5>Subtotal ${(this.props.subtotal / 100).toFixed(2)}</h5>
         {orderList}
       </div>
 
